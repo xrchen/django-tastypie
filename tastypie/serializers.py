@@ -118,9 +118,8 @@ class Serializer(object):
         Can be overridden at the ``Serializer`` level (``datetime_formatting``)
         or globally (via ``settings.TASTYPIE_DATETIME_FORMATTING``).
 
-        Default is ``iso-8601``, which looks like "2010-12-16T03:02:14".
+        Default is ``iso-8601``, which looks like "2010-12-16T03:02:14+00:00".
         """
-        data = make_naive(data)
         if self.datetime_formatting == 'rfc-2822':
             return format_datetime(data)
 
