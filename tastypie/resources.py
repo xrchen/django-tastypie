@@ -189,7 +189,6 @@ class Resource(object):
         are seen, there is special handling to either present a message back
         to the user or return the response traveling with the exception.
         """
-        @csrf_exempt
         def wrapper(request, *args, **kwargs):
             try:
                 callback = getattr(self, view)
